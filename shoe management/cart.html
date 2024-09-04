@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shoe Store</title>
+  <style>
+    .shoe-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    body {
+      background-image: url('https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .shoe-image {
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+    .cart {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Shoe Store</h1>
+  <div class="shoe-item">
+    <img class="shoe-image" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/5b8aa82f-e010-4052-a2e6-d81db2729fd0/air-force-1-high-07-lx-shoes-wb31gJ.png" alt="Shoe 1">
+    <span>Shoe 1</span>
+    <button onclick="addToCart('Shoe 1')">Add to Cart</button>
+  </div>
+  
+  <div class="shoe-item">
+    <img class="shoe-image" src="https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/63f8ba82-1538-4a49-b2cf-feb96653a967/air-max-90-shoes-kRsBnD.png" alt="Shoe 2">
+    <span>Shoe 2</span>
+    <button onclick="addToCart('Shoe 2')">Add to Cart</button>
+  </div>
+  <div class="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <button onclick="clearCart()">Clear Cart</button>
+  </div>
+  
+  <script>
+    function addToCart(item) {
+      var cartItems = document.getElementById('cart-items');
+      var li = document.createElement('li');
+      li.textContent = item;
+      cartItems.appendChild(li);
+    }
+    function clearCart() {
+      var cartItems = document.getElementById('cart-items');
+      cartItems.innerHTML = '';
+    }
+  </script>
+</body>
+</html>
